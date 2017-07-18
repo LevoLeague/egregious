@@ -2,7 +2,6 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 ENV["RAILS_ENV"] ||= "test"
 
-require 'rubygems'
 require 'bundler/setup'
 require 'bundler'
 Bundler.setup
@@ -21,8 +20,11 @@ require "rails"
 case Rails.version
 when '3.2.22'
   require "apps/rails3_2"
-when '4.2.5'
+when '4.2.9'
   require "apps/rails4"
+when '5.1.2'
+  require "apps/rails5"
+  require 'rails-controller-testing'
 end
 
 require 'rspec/rails'
